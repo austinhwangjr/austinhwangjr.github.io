@@ -1,9 +1,22 @@
-export const projects = [
+export type Project = {
+  title: string;
+  description: string;
+  tags: string[];       // tech stack used, for filtering
+  repo?: string;
+  demo?: string;
+  image?: string;       // path inside /public, e.g. "/projects/project-one.png"
+  featured?: boolean;   // true/false, to display on landing page
+};
+
+export const projects: Project[] = [
   {
     title: "Project One",
     description: "What it does.",
     tags: ["Next.js", "TypeScript"],
-    repo: "https://github.com/you/project-one",
-    demo: "https://example.com",
+  },
+  {
+    title: "Project Two",
+    description: "What it does.",
+    tags: ["Next.js", "TypeScript"],
   },
 ];
