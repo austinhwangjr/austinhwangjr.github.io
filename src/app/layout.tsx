@@ -17,7 +17,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Austin's Site",
+  title: {
+    default: "Austin's Site",
+    template: "Austin's Site | %s"
+  },
   description: "My site, made with Next.js, hosted on GitHub Pages",
 };
 

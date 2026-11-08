@@ -1,7 +1,7 @@
 import Link from "next/link";
-import Hero from "@/components/pages/home/hero";
-import Skills from "@/components/pages/home/skills";
-import FeaturedProjects from "@/components/pages/home/featured-projects";
+import Hero from "@/components/home/hero";
+import Skills from "@/components/home/skills";
+import FeaturedProjects from "@/components/home/featured-projects";
 
 export default function Home() {
   return (

@@ -9,6 +9,7 @@ export default function ProjectCard({ project }: { project: Project }) {
 
   return (
     <Card className="overflow-hidden pt-0 transition-shadow hover:shadow-md">
+      {/* Image of project */}
       {image ? (
         <Image
           src={image}
@@ -24,9 +25,11 @@ export default function ProjectCard({ project }: { project: Project }) {
       )}
 
       <CardContent className="flex flex-1 flex-col gap-3">
+        {/* Project title / description */}
         <h3 className="text-lg font-semibold">{title}</h3>
         <p className="text-sm text-muted-foreground">{description}</p>
 
+        {/* Project tag(s) */}
         <ul className="flex flex-wrap gap-2">
           {tags.map((tag) => (
             <li
@@ -37,29 +40,32 @@ export default function ProjectCard({ project }: { project: Project }) {
             </li>
           ))}
         </ul>
-
-        <div className="mt-auto flex gap-4 pt-2 text-sm">
-          {repo && (
-            <a
-              href={repo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 hover:underline"
-            >
-              <FaGithub className="size-4" /> GitHub
-            </a>
-          )}
-          {demo && (
-            <a
-              href={demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 hover:underline"
-            >
-              <FiExternalLink className="size-4" /> Live demo
-            </a>
-          )}
-        </div>
+        
+        {/* Repo and demo links (if present) */}
+        {(repo || demo) && (
+          <div className="mt-auto flex gap-4 pt-2 text-sm">
+            {repo && (
+              <a
+                href={repo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 hover:underline"
+              >
+                <FaGithub className="size-4" /> GitHub
+              </a>
+            )}
+            {demo && (
+              <a
+                href={demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 hover:underline"
+              >
+                <FiExternalLink className="size-4" /> Live demo
+              </a>
+            )}
+          </div>
+        )}
       </CardContent>
     </Card>
   );

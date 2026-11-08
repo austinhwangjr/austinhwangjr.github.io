@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa6";
-import ProjectCard from "@/components/project-card";
+import ProjectCard from "@/components/projects/project-card";
 import { buttonVariants } from "@/components/ui/button";
 import { projects } from "@/data/projects";
 
@@ -9,7 +9,7 @@ export default function FeaturedProjects() {
 
   return (
     <section className="mx-auto w-full max-w-5xl px-6 py-12">
-      <h2 className="text-2xl font-semibold tracking-tight">Featured projects</h2>
+      <h2 className="text-2xl font-semibold tracking-tight">Featured Projects</h2>
 
       {/* ToDo: Remove when projects are added */}
       <br></br>
