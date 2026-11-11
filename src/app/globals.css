@@ -131,4 +131,10 @@
     @apply font-sans;
     scrollbar-gutter: stable;
   }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
 }
