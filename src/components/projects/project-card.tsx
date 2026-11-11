@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { FiExternalLink } from "react-icons/fi";
 import { FaGithub } from "react-icons/fa6";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge";;
 import type { Project } from "@/data/projects";
 
 export default function ProjectCard({ project }: { project: Project }) {
@@ -32,11 +33,13 @@ export default function ProjectCard({ project }: { project: Project }) {
         {/* Project tag(s) */}
         <ul className="flex flex-wrap gap-2">
           {tags.map((tag) => (
-            <li
-              key={tag}
-              className="rounded-full border px-2.5 py-0.5 text-xs text-muted-foreground"
-            >
-              {tag}
+            <li key={tag}>
+              <Badge
+                className="h-auto px-3 py-1 text-xs text-muted-foreground"
+                variant="outline"
+              >
+                {tag}
+              </Badge>
             </li>
           ))}
         </ul>

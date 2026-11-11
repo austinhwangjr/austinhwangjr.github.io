@@ -11,11 +11,25 @@ const links = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/projects", label: "Projects" },
-  { href: "/contact", label: "Contact" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
+
+  /**
+   * Handle scrolling to the Contact section in the Home page 
+   * when Contact is clicked in the Navbar
+   * 
+   * When current page is Home/landing page, simply scroll to the "Get in touch" section.
+   * Else, navigate to /#contact like any other page.
+   */
+  function handleClick(e: React.MouseEvent, href: string) {
+    if (href === "/#contact" && pathname === "/") {
+      e.preventDefault();
+      document.getElementById("contact")?.scrollIntoView();
+    }
+  }
 
   return (
     <header className="sticky top-4 z-50 flex justify-center px-4 pt-4">
@@ -33,6 +47,7 @@ export default function Navbar() {
             <li key={href}>
               <Link
                 href={href}
+                onClick={(e) => handleClick(e, href)}
                 aria-current={pathname === href ? "page" : undefined}
                 className={cn(
                   buttonVariants({ variant: "ghost", size: "sm" }),

@@ -1,3 +1,4 @@
+import { Badge } from "@/components/ui/badge";
 import { skillGroups } from "@/data/skills";
 
 export default function Skills() {
@@ -13,12 +14,14 @@ export default function Skills() {
             </h3>
             <ul className="flex flex-wrap gap-3">
               {group.skills.map(({ name, icon: Icon }) => (
-                <li
-                  key={name}
-                  className="inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-sm"
-                >
-                  {Icon && <Icon className="size-4" aria-hidden />}
-                  {name}
+                <li key={name}>
+                  <Badge
+                    variant="outline"
+                    className="h-auto gap-2 px-3.5 py-1.5 text-sm font-normal [&>svg]:size-4!"
+                  >
+                    {Icon && <Icon aria-hidden />}
+                    {name}
+                  </Badge>
                 </li>
               ))}
             </ul>
