@@ -11,10 +11,6 @@ export default function FeaturedProjects() {
     <section className="mx-auto w-full max-w-5xl px-6 py-12">
       <h2 className="text-2xl font-semibold tracking-tight">Featured Projects</h2>
 
-      {/* ToDo: Remove when projects are added */}
-      <br></br>
-      <h3 className="flex justify-center">Work in Progress</h3>
-
       {/* Grid of featured projects (in cards) */}
       <div className="mt-6 grid gap-6 md:grid-cols-2">
         {featured.map((project) => (
