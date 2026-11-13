@@ -2,28 +2,17 @@ import Image from "next/image";
 import { FiExternalLink } from "react-icons/fi";
 import { FaGithub } from "react-icons/fa6";
 import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge";;
+import { Badge } from "@/components/ui/badge";
+import ImageCarousel from "@/components/projects/image-carousel";
 import type { Project } from "@/data/projects";
 
 export default function ProjectCard({ project }: { project: Project }) {
-  const { title, description, tags, repo, demo, image } = project;
+  const { title, description, tags, repo, demo, images = [] } = project;
 
   return (
     <Card className="overflow-hidden pt-0 transition-shadow hover:shadow-md">
       {/* Image of project */}
-      {image ? (
-        <Image
-          src={image}
-          alt={`${title} screenshot`}
-          width={800}
-          height={450}
-          className="aspect-video w-full object-cover"
-        />
-      ) : (
-        <div className="flex aspect-video w-full items-center justify-center bg-muted text-sm text-muted-foreground">
-          Screenshot coming soon
-        </div>
-      )}
+      <ImageCarousel images={images} title={title} />
 
       <CardContent className="flex flex-1 flex-col gap-3">
         {/* Project title / description */}
